@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = System.getProperty("mainClassName")
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compile 'java3d:j3d-core-utils:1.3.1'
+  compile 'gov.nist.math:jama:1.0.3'
+}
+
