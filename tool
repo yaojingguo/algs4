@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]; then
   cat << EOF
-usage sample: $0 DirectedDFS < data/tinyDG.txt 2
+usage sample: $0 Quick < data/tiny.txt
 EOF
   exit 1
 fi
