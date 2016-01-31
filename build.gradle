@@ -15,6 +15,8 @@ dependencies {
 
 [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
+defaultTasks 'compileTest'
+
 javadoc {
   /*
     Disable the crazy super-strict doclint tool in Java 8. For details, refer to:
