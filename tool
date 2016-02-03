@@ -11,5 +11,8 @@ classpath=build/classes/main
 classname=$1
 shift
 
-echo "args: $@"
-java -cp $classpath "edu.princeton.cs.algs4.$classname" $@
+if [[ $classname =~ ^yao.* ]]; then
+  java -cp $classpath "$classname" $@
+else
+  java -cp $classpath "edu.princeton.cs.algs4.$classname" $@
+fi
