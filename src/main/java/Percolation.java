@@ -1,5 +1,5 @@
 import edu.princeton.cs.algs4.*;
-  
+
 public class Percolation {
   private static int BLOCKED = 0;
   private static int OPEN = 1;
@@ -15,7 +15,7 @@ public class Percolation {
 
   // create N-by-N grid, with all sites blocked
   public Percolation(int N) {
-    if (N <= 0) 
+    if (N <= 0)
       throw new IllegalArgumentException("Invalid value " + N + " for N. N must be greater than 0.");
     this.status = new int[N][N];
     this.ufSize = N * N + 2;
@@ -29,7 +29,7 @@ public class Percolation {
     // Connect virtual bottom to bottom row
     for (int i = 1; i < N; i++)
       uf.union(vBottom - i, vBottom);
-  }   
+  }
 
   // open site (row i, column j) if it is not open already
   public void open(int i, int j) {
@@ -52,12 +52,12 @@ public class Percolation {
   // is site (row i, column j) full?
   public boolean isFull(int i, int j) {
     checkIndex(i, j);
-    throw new UnsupportedOperationException();
+    return uf.connected(vTop, index(i, j));
   }
 
   // does the system percolate?
   public boolean percolates() {
-    throw new UnsupportedOperationException();
+    return uf.connected(vTop, vBottom);
   }
 
   private int index(int i, int j) {
@@ -72,10 +72,11 @@ public class Percolation {
   }
   private void checkIndex(int i, int j) {
     if (!isValid(i))
-      throw new IndexOutOfBoundsException("Invalid value " + i + " for row. Row's range is [1, " + "N");
+      throw new IndexOutOfBoundsException("Invalid value " + i + " for row. Row's range is [1, " + N + "].");
     if (!isValid(j))
-      throw new IndexOutOfBoundsException("Invalid value " + i + " for column. Column's range is [1, " + "N");
+      throw new IndexOutOfBoundsException("Invalid value " + i + " for column. Column's range is [1, " + N + "].");
   }
+  // a must be in [1, N].
   private boolean isValid(int a) {
     return 1 <= a || a <= N;
   }
