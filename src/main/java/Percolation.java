@@ -42,20 +42,24 @@ public class Percolation {
     union(p, i, j+1);
     union(p, i+1, j);
   }
+
   // is site (row i, column j) open?
   public boolean isOpen(int i, int j) {
     checkIndex(i, j);
     return status[i-1][j-1] == OPEN;
   }
+
   // is site (row i, column j) full?
   public boolean isFull(int i, int j) {
     checkIndex(i, j);
     throw new UnsupportedOperationException();
   }
+
   // does the system percolate?
   public boolean percolates() {
     throw new UnsupportedOperationException();
   }
+
   private int index(int i, int j) {
     return i * N + j;
   }
