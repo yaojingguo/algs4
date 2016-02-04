@@ -17,27 +17,21 @@ public class PercolationStats {
     int matrixSize = N * N;
     double[] xfs = new double[T];
   
-    info(xfs);
-
     for (int t = 0; t < T; t++) {
       Percolation p = new Percolation(N);
       int openCnt = 0;
       while (!p.percolates()) {
-        // System.out.println("probing i, j");
         int i, j;
         do {
           i = StdRandom.uniform(1, N+1);
           j = StdRandom.uniform(1, N+1);
         } while (p.isOpen(i, j));
         openCnt++;
-        // System.out.printf("i=%d, j=%d, openCnt=%d\n", i, j, openCnt);
         p.open(i, j);
       }
       xfs[t] = ((double) openCnt) / ((double)matrixSize);
     }
     
-    info(xfs);
-
     this._mean = StdStats.mean(xfs);
     this._stddev = StdStats.stddev(xfs);
     double half = 1.96 * _stddev / Math.sqrt(T);
