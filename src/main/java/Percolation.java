@@ -64,7 +64,7 @@ public class Percolation {
   private void union(int p, int i, int j) {
     if (!isValid(i)) return;
     if (!isValid(j)) return;
-    if (isOpen(i, j)) return;
+    if (!isOpen(i, j)) return;
     int q = index(i, j);
     uf.union(p, q);
   }
@@ -80,9 +80,18 @@ public class Percolation {
   }
   // test client (optional)
   public static void main(String[] args) {
-    Percolation p = new Percolation(2);
-    p.open(1, 1);
-    p.open(2, 1);
-    System.out.printf("Percolatied: %b\n", p.percolates());
+    {
+      Percolation p = new Percolation(2);
+      p.open(1, 1);
+      p.open(2, 1);
+      System.out.printf("Percolatied: %b\n", p.percolates());
+    }
+    {
+      Percolation p = new Percolation(3);
+      p.open(1, 1);
+      p.open(2, 2);
+      p.open(3, 3);
+      System.out.printf("Percolatied: %b\n", p.percolates());
+    }
   }
 }

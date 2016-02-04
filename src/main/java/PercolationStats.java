@@ -1,4 +1,5 @@
 import edu.princeton.cs.algs4.*;
+import java.util.*;
 
 public class PercolationStats {
   private double _mean;
@@ -12,26 +13,35 @@ public class PercolationStats {
       throw new IllegalArgumentException("Invalid value for N. N>0 must be true.");
     if (T <= 0)
       throw new IllegalArgumentException("Invalid value for T. T>0 must be true.");
-
+  
     int matrixSize = N * N;
-    double[] xfs = new double[N];
+    double[] xfs = new double[T];
+  
+    info(xfs);
+
     for (int t = 0; t < T; t++) {
       Percolation p = new Percolation(N);
       int openCnt = 0;
       while (!p.percolates()) {
+        // System.out.println("probing i, j");
         int i, j;
         do {
-          i = StdRandom.uniform(N);
-          j = StdRandom.uniform(N);
+          i = StdRandom.uniform(1, N+1);
+          j = StdRandom.uniform(1, N+1);
         } while (p.isOpen(i, j));
         openCnt++;
+        // System.out.printf("i=%d, j=%d, openCnt=%d\n", i, j, openCnt);
         p.open(i, j);
       }
-      xfs[t] = openCnt++ / matrixSize;
+      xfs[t] = ((double) openCnt) / ((double)matrixSize);
     }
+    
+    info(xfs);
+
     this._mean = StdStats.mean(xfs);
     this._stddev = StdStats.stddev(xfs);
     double half = 1.96 * _stddev / Math.sqrt(T);
+    System.out.printf("half: %f\n", half);
     this._confidenceLo = _mean - half;
     this._confidenceHi = _mean + half;
   }
@@ -56,6 +66,14 @@ public class PercolationStats {
     return _confidenceHi;
   }
 
+  private void info(double[] xfs) {
+    System.out.printf("xfs:\n");
+    for (double xf: xfs) {
+      System.out.printf("(%f) ", xf);
+    }
+    System.out.println();
+  }
+
   // test client (described below)
   public static void main(String[] args) {
     int N = Integer.parseInt(args[0]);
@@ -63,6 +81,6 @@ public class PercolationStats {
     PercolationStats ps = new PercolationStats(N, T);
     System.out.printf("mean                    = %f\n", ps.mean());
     System.out.printf("stddev                  = %f\n", ps.stddev());
-    System.out.printf("95% confidence interval = %f, %f\n", ps.confidenceLo(), ps.confidenceHi());
-  }   
+    System.out.printf("95%% confidence interval = %f, %f\n", ps.confidenceLo(), ps.confidenceHi());
+  }
 }
