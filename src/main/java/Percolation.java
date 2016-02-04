@@ -23,12 +23,6 @@ public class Percolation {
     this.N = N;
     this.vTop = 0;
     this.vBottom = N * N + 1;
-    // Connect virtual top to top row
-    for (int i = 1; i < N; i++)
-      uf.union(vTop, i);
-    // Connect virtual bottom to bottom row
-    for (int i = 1; i < N; i++)
-      uf.union(vBottom - i, vBottom);
   }
 
   // open site (row i, column j) if it is not open already
@@ -37,6 +31,10 @@ public class Percolation {
     if (isOpen(i, j)) return;
     status[i-1][j-1] = OPEN;
     int p = index(i, j);
+    if (i == 1)
+      uf.union(p, vTop);
+    else if (i == N)
+      uf.union(p, vBottom);
     union(p, i, j-1);
     union(p, i-1, j);
     union(p, i, j+1);
@@ -61,11 +59,11 @@ public class Percolation {
   }
 
   private int index(int i, int j) {
-    return i * N + j;
+    return (i-1) * N + (j-1) + 1;
   }
   private void union(int p, int i, int j) {
-    if (isValid(i)) return;
-    if (isValid(j)) return;
+    if (!isValid(i)) return;
+    if (!isValid(j)) return;
     if (isOpen(i, j)) return;
     int q = index(i, j);
     uf.union(p, q);
@@ -78,9 +76,13 @@ public class Percolation {
   }
   // a must be in [1, N].
   private boolean isValid(int a) {
-    return 1 <= a || a <= N;
+    return 1 <= a && a <= N;
   }
   // test client (optional)
   public static void main(String[] args) {
+    Percolation p = new Percolation(2);
+    p.open(1, 1);
+    p.open(2, 1);
+    System.out.printf("Percolatied: %b\n", p.percolates());
   }
 }
