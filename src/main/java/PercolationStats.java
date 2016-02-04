@@ -73,8 +73,8 @@ public class PercolationStats {
     int N = Integer.parseInt(args[0]);
     int T = Integer.parseInt(args[1]);
     PercolationStats ps = new PercolationStats(N, T);
-    System.out.printf("mean                    = %f\n", ps.mean());
-    System.out.printf("stddev                  = %f\n", ps.stddev());
-    System.out.printf("95%% confidence interval = %f, %f\n", ps.confidenceLo(), ps.confidenceHi());
+    System.out.printf("mean                    = %.16f\n", ps.mean());
+    System.out.printf("stddev                  = %.17f\n", ps.stddev());
+    System.out.printf("95%% confidence interval = %.16f, %.16f\n", ps.confidenceLo(), ps.confidenceHi());
   }
 }

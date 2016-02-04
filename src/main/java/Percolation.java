@@ -80,18 +80,17 @@ public class Percolation {
   }
   // test client (optional)
   public static void main(String[] args) {
-    {
-      Percolation p = new Percolation(2);
-      p.open(1, 1);
-      p.open(2, 1);
-      System.out.printf("Percolatied: %b\n", p.percolates());
-    }
-    {
-      Percolation p = new Percolation(3);
-      p.open(1, 1);
-      p.open(2, 2);
-      p.open(3, 3);
-      System.out.printf("Percolatied: %b\n", p.percolates());
-    }
+    Percolation p22 = new Percolation(2);
+    p22.open(1, 1);
+    p22.open(2, 1);
+    if (!p22.percolates())
+      throw new IllegalStateException("percolation: expect yes, actual no");
+
+    Percolation p33 = new Percolation(3);
+    p33.open(1, 1);
+    p33.open(2, 2);
+    p33.open(3, 3);
+    if (p33.percolates())
+      throw new IllegalStateException("percolate: expect no, actual yes");
   }
 }
