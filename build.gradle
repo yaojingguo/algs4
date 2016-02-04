@@ -1,10 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
+checkstyle.toolVersion = '6.6'
+
 
 mainClassName = System.getProperty("mainClassName")
 
 repositories {
   mavenLocal()
+  maven { url "http://maven.oschina.net/content/groups/public/" }
   mavenCentral()
 }
 
