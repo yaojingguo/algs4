@@ -35,7 +35,6 @@ public class PercolationStats {
     this._mean = StdStats.mean(xfs);
     this._stddev = StdStats.stddev(xfs);
     double half = 1.96 * _stddev / Math.sqrt(T);
-    System.out.printf("half: %f\n", half);
     this._confidenceLo = _mean - half;
     this._confidenceHi = _mean + half;
   }
