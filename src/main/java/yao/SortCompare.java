@@ -19,6 +19,8 @@
  *
  ******************************************************************************/
 
+package yao;
+
 import edu.princeton.cs.algs4.*;
 import java.util.Arrays;
 
@@ -84,7 +86,7 @@ public class SortCompare {
             time1 = timeRandomInput(alg1, N, T); // Total for alg1. 
             time2 = timeRandomInput(alg2, N, T); // Total for alg2. 
         }
-
+        StdOut.printf("time1: %f, time2: %f\n", time1, time2);
         StdOut.printf("For %d random Doubles\n    %s is", N, alg1); 
         StdOut.printf(" %.1f times faster than %s\n", time2/time1, alg2); 
     } 
