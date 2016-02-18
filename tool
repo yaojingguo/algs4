@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ $# -eq 0 ]; then
   cat << EOF
@@ -13,6 +13,8 @@ shift
 
 if [[ $classname =~ ^yao.* ]]; then
   java -cp $classpath "$classname" $@
+elif [[ $classname =~ ^aofa.* ]]; then
+  java -cp $classpath "$classname" $@
 else
-  java -cp $classpath "edu.princeton.cs.algs4.$classname" $@
+  java -cp $classpath "edu.princeton.cs.algs4.$classname" "$@"
 fi
