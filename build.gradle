@@ -11,6 +11,12 @@ repositories {
   mavenCentral()
 }
 
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+  testCompile 'com.google.truth:truth:0.27'
+}
+
 [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
 defaultTasks 'compileTest'
