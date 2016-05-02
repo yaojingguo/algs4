@@ -12,9 +12,9 @@ classname=$1
 shift
 
 if [[ $classname =~ ^yao.* ]]; then
-  java -cp $classpath "$classname" $@
+  java -cp $classpath "$classname" "$@"
 elif [[ $classname =~ ^aofa.* ]]; then
-  java -cp $classpath "$classname" $@
+  java -cp $classpath "$classname" "$@"
 else
   java -cp $classpath "edu.princeton.cs.algs4.$classname" "$@"
 fi
