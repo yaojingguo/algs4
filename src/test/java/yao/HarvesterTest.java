@@ -7,7 +7,7 @@ public class HarvesterTest {
     @Test
     public void testHarvest() {
         Harvester.harvest("a*", "aab");
-        Harvester.harvest("a*", "aabaab");
+        Harvester.harvest("a*", "aabxaab");
     }
 
 }
