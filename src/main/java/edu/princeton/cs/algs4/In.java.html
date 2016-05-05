@@ -41,6 +41,7 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="preproc">import</span><span class="normal"> java</span><span class="symbol">.</span><span class="normal">io</span><span class="symbol">.</span><span class="normal">BufferedInputStream</span><span class="symbol">;</span>
 <span class="preproc">import</span><span class="normal"> java</span><span class="symbol">.</span><span class="normal">io</span><span class="symbol">.</span><span class="normal">File</span><span class="symbol">;</span>
+<span class="preproc">import</span><span class="normal"> java</span><span class="symbol">.</span><span class="normal">io</span><span class="symbol">.</span><span class="normal">FileInputStream</span><span class="symbol">;</span>
 <span class="preproc">import</span><span class="normal"> java</span><span class="symbol">.</span><span class="normal">io</span><span class="symbol">.</span><span class="normal">IOException</span><span class="symbol">;</span>
 <span class="preproc">import</span><span class="normal"> java</span><span class="symbol">.</span><span class="normal">io</span><span class="symbol">.</span><span class="normal">InputStream</span><span class="symbol">;</span>
 <span class="preproc">import</span><span class="normal"> java</span><span class="symbol">.</span><span class="normal">net</span><span class="symbol">.</span><span class="normal">URL</span><span class="symbol">;</span>
@@ -167,7 +168,10 @@ http://www.gnu.org/software/src-highlite -->
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="function">In</span><span class="symbol">(</span><span class="usertype">File</span><span class="normal"> file</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file </span><span class="symbol">==</span><span class="normal"> </span><span class="keyword">null</span><span class="symbol">)</span><span class="normal"> </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">NullPointerException</span><span class="symbol">(</span><span class="string">"argument is null"</span><span class="symbol">);</span>
 <span class="normal">        </span><span class="keyword">try</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">            scanner </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">Scanner</span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">,</span><span class="normal"> CHARSET_NAME</span><span class="symbol">);</span>
+<span class="normal">            </span><span class="comment">// for consistency with StdIn, wrap with BufferedInputStream instead of use</span>
+<span class="normal">            </span><span class="comment">// file as argument to Scanner</span>
+<span class="normal">            </span><span class="usertype">FileInputStream</span><span class="normal"> fis </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">FileInputStream</span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">);</span>
+<span class="normal">            scanner </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">Scanner</span><span class="symbol">(</span><span class="keyword">new</span><span class="normal"> </span><span class="function">BufferedInputStream</span><span class="symbol">(</span><span class="normal">fis</span><span class="symbol">),</span><span class="normal"> CHARSET_NAME</span><span class="symbol">);</span>
 <span class="normal">            scanner</span><span class="symbol">.</span><span class="function">useLocale</span><span class="symbol">(</span><span class="normal">LOCALE</span><span class="symbol">);</span>
 <span class="normal">        </span><span class="cbracket">}</span>
 <span class="normal">        </span><span class="keyword">catch</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">IOException</span><span class="normal"> ioe</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -190,7 +194,10 @@ http://www.gnu.org/software/src-highlite -->
 <span class="normal">            </span><span class="comment">// first try to read file from local file system</span>
 <span class="normal">            </span><span class="usertype">File</span><span class="normal"> file </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">File</span><span class="symbol">(</span><span class="normal">name</span><span class="symbol">);</span>
 <span class="normal">            </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">.</span><span class="function">exists</span><span class="symbol">())</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">                scanner </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">Scanner</span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">,</span><span class="normal"> CHARSET_NAME</span><span class="symbol">);</span>
+<span class="normal">                </span><span class="comment">// for consistency with StdIn, wrap with BufferedInputStream instead of use</span>
+<span class="normal">                </span><span class="comment">// file as argument to Scanner</span>
+<span class="normal">                </span><span class="usertype">FileInputStream</span><span class="normal"> fis </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">FileInputStream</span><span class="symbol">(</span><span class="normal">file</span><span class="symbol">);</span>
+<span class="normal">                scanner </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">Scanner</span><span class="symbol">(</span><span class="keyword">new</span><span class="normal"> </span><span class="function">BufferedInputStream</span><span class="symbol">(</span><span class="normal">fis</span><span class="symbol">),</span><span class="normal"> CHARSET_NAME</span><span class="symbol">);</span>
 <span class="normal">                scanner</span><span class="symbol">.</span><span class="function">useLocale</span><span class="symbol">(</span><span class="normal">LOCALE</span><span class="symbol">);</span>
 <span class="normal">                </span><span class="keyword">return</span><span class="symbol">;</span>
 <span class="normal">            </span><span class="cbracket">}</span>
@@ -730,7 +737,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>

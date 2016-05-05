@@ -163,7 +163,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment"> *  As an example, the following code fragment reads all of the remaining</span>
 <span class="comment"> *  tokens from standard input and returns them as an array of strings.</span>
 <span class="comment"> *  </span><span class="keyword">&lt;pre&gt;</span>
-<span class="comment"> *  String[] words = StdIn.readAllString();</span>
+<span class="comment"> *  String[] words = StdIn.readAllStrings();</span>
 <span class="comment"> *  </span><span class="keyword">&lt;/pre&gt;</span>
 <span class="comment"> *  </span><span class="keyword">&lt;p&gt;</span>
 <span class="comment"> *  </span><span class="keyword">&lt;b&gt;</span><span class="comment">Differences with Scanner.</span><span class="keyword">&lt;/b&gt;</span>
@@ -189,7 +189,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment"> *  </span><span class="keyword">&lt;/ul&gt;</span>
 <span class="comment"> *  </span><span class="keyword">&lt;p&gt;</span>
 <span class="comment"> *  Historical note: {</span><span class="type">@code</span><span class="comment"> StdIn} preceded {</span><span class="type">@code</span><span class="comment"> Scanner}; when</span>
-<span class="comment"> *  {</span><span class="type">@code</span><span class="comment"> Scanner} was introduced, this class was reimplemented to use it.</span>
+<span class="comment"> *  {</span><span class="type">@code</span><span class="comment"> Scanner} was introduced, this class was reimplemented to use {</span><span class="type">@code</span><span class="comment"> Scanner}.</span>
 <span class="comment"> *  </span><span class="keyword">&lt;p&gt;</span>
 <span class="comment"> *  </span><span class="keyword">&lt;b&gt;</span><span class="comment">Using standard input.</span><span class="keyword">&lt;/b&gt;</span>
 <span class="comment"> *  Standard input is fundamental operating system abstraction, on Mac OS X,</span>
@@ -292,7 +292,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads and returns the next line, excluding the line separator if present.</span>
-<span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next line, excluding the line separator if present</span>
+<span class="comment">     *</span>
+<span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next line, excluding the line separator if present;</span>
+<span class="comment">     *         </span><span class="keyword">&lt;tt&gt;</span><span class="comment">null</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> if no such line</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="usertype">String</span><span class="normal"> </span><span class="function">readLine</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="usertype">String</span><span class="normal"> line</span><span class="symbol">;</span>
@@ -307,7 +309,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">    </span><span class="comment">/**</span>
 <span class="comment">     * Reads and returns the next character.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next character</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">char</span><span class="normal"> </span><span class="function">readChar</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        scanner</span><span class="symbol">.</span><span class="function">useDelimiter</span><span class="symbol">(</span><span class="normal">EMPTY_PATTERN</span><span class="symbol">);</span>
@@ -321,7 +325,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads and returns the remainder of the input, as a string.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the remainder of the input, as a string</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="usertype">String</span><span class="normal"> </span><span class="function">readAll</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="normal">scanner</span><span class="symbol">.</span><span class="function">hasNextLine</span><span class="symbol">())</span>
@@ -336,7 +342,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token  and returns the </span><span class="keyword">&lt;tt&gt;</span><span class="comment">String</span><span class="keyword">&lt;/tt&gt;</span><span class="comment">.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next </span><span class="keyword">&lt;tt&gt;</span><span class="comment">String</span><span class="keyword">&lt;/tt&gt;</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="usertype">String</span><span class="normal"> </span><span class="function">readString</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">return</span><span class="normal"> scanner</span><span class="symbol">.</span><span class="function">next</span><span class="symbol">();</span>
@@ -344,7 +352,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as an integer, and returns the integer.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next integer on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as an </span><span class="keyword">&lt;tt&gt;</span><span class="comment">int</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">int</span><span class="normal"> </span><span class="function">readInt</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -353,7 +363,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as a double, and returns the double.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next double on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as a </span><span class="keyword">&lt;tt&gt;</span><span class="comment">double</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">double</span><span class="normal"> </span><span class="function">readDouble</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -362,7 +374,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as a float, and returns the float.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next float on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as a </span><span class="keyword">&lt;tt&gt;</span><span class="comment">float</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">float</span><span class="normal"> </span><span class="function">readFloat</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -371,7 +385,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as a long integer, and returns the long integer.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next long integer on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as a </span><span class="keyword">&lt;tt&gt;</span><span class="comment">long</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">long</span><span class="normal"> </span><span class="function">readLong</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -380,7 +396,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as a short integer, and returns the short integer.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next short integer on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as a </span><span class="keyword">&lt;tt&gt;</span><span class="comment">short</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">short</span><span class="normal"> </span><span class="function">readShort</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -389,7 +407,9 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">   </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as a byte, and returns the byte.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next byte on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as a </span><span class="keyword">&lt;tt&gt;</span><span class="comment">byte</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">byte</span><span class="normal"> </span><span class="function">readByte</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -399,7 +419,9 @@ http://www.gnu.org/software/src-highlite -->
 <span class="normal">    </span><span class="comment">/**</span>
 <span class="comment">     * Reads the next token from standard input, parses it as a boolean,</span>
 <span class="comment">     * and returns the boolean.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> the next boolean on standard input</span>
+<span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if standard input is empty</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> InputMismatchException if the next token cannot be parsed as a </span><span class="keyword">&lt;tt&gt;</span><span class="comment">boolean</span><span class="keyword">&lt;/tt&gt;</span><span class="comment">:</span>
 <span class="comment">     *    </span><span class="keyword">&lt;tt&gt;</span><span class="comment">true</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> or </span><span class="keyword">&lt;tt&gt;</span><span class="comment">1</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> for true, and </span><span class="keyword">&lt;tt&gt;</span><span class="comment">false</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> or </span><span class="keyword">&lt;tt&gt;</span><span class="comment">0</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> for false,</span>
 <span class="comment">     *    ignoring case</span>
@@ -415,6 +437,7 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="normal">    </span><span class="comment">/**</span>
 <span class="comment">     * Reads all remaining tokens from standard input and returns them as an array of strings.</span>
+<span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> all remaining tokens on standard input, as an array of strings</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> String</span><span class="symbol">[]</span><span class="normal"> </span><span class="function">readAllStrings</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
@@ -590,7 +613,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>

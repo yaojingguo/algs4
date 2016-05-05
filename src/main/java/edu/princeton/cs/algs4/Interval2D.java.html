@@ -41,8 +41,8 @@ http://www.gnu.org/software/src-highlite -->
 
 <span class="comment">/**</span>
 <span class="comment"> *  The </span><span class="keyword">&lt;tt&gt;</span><span class="comment">Interval2D</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> class represents a closed two-dimensional interval,</span>
-<span class="comment"> *  which represents all points (x, y) with both xleft &lt;= x &lt;= xright and</span>
-<span class="comment"> *  yleft &lt;= y &lt;= right.</span>
+<span class="comment"> *  which represents all points (x, y) with both xmin &lt;= x &lt;= xmax and</span>
+<span class="comment"> *  ymin &lt;= y &lt;= ymax.</span>
 <span class="comment"> *  Two-dimensional intervals are immutable: their values cannot be changed</span>
 <span class="comment"> *  after they are created.</span>
 <span class="comment"> *  The class </span><span class="keyword">&lt;code&gt;</span><span class="comment">Interval2D</span><span class="keyword">&lt;/code&gt;</span><span class="comment"> includes methods for checking whether</span>
@@ -102,7 +102,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="normal">    </span><span class="comment">/**</span>
 <span class="comment">     * Returns a string representation of this two-dimensional interval.</span>
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> a string representation of this two-dimensional interval</span>
-<span class="comment">     *    in the form [xleft, xright] x [yleft, yright]</span>
+<span class="comment">     *    in the form [xmin, xmax] x [ymin, ymax]</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="usertype">String</span><span class="normal"> </span><span class="function">toString</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">return</span><span class="normal"> x </span><span class="symbol">+</span><span class="normal"> </span><span class="string">" x "</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> y</span><span class="symbol">;</span>
@@ -136,8 +136,8 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * Draws this two-dimensional interval to standard draw.</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="type">void</span><span class="normal"> </span><span class="function">draw</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">        </span><span class="type">double</span><span class="normal"> xc </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">x</span><span class="symbol">.</span><span class="function">left</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> x</span><span class="symbol">.</span><span class="function">right</span><span class="symbol">())</span><span class="normal"> </span><span class="symbol">/</span><span class="normal"> </span><span class="number">2.0</span><span class="symbol">;</span>
-<span class="normal">        </span><span class="type">double</span><span class="normal"> yc </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">y</span><span class="symbol">.</span><span class="function">left</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> y</span><span class="symbol">.</span><span class="function">right</span><span class="symbol">())</span><span class="normal"> </span><span class="symbol">/</span><span class="normal"> </span><span class="number">2.0</span><span class="symbol">;</span>
+<span class="normal">        </span><span class="type">double</span><span class="normal"> xc </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">x</span><span class="symbol">.</span><span class="function">min</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> x</span><span class="symbol">.</span><span class="function">max</span><span class="symbol">())</span><span class="normal"> </span><span class="symbol">/</span><span class="normal"> </span><span class="number">2.0</span><span class="symbol">;</span>
+<span class="normal">        </span><span class="type">double</span><span class="normal"> yc </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">y</span><span class="symbol">.</span><span class="function">min</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> y</span><span class="symbol">.</span><span class="function">max</span><span class="symbol">())</span><span class="normal"> </span><span class="symbol">/</span><span class="normal"> </span><span class="number">2.0</span><span class="symbol">;</span>
 <span class="normal">        StdDraw</span><span class="symbol">.</span><span class="function">rectangle</span><span class="symbol">(</span><span class="normal">xc</span><span class="symbol">,</span><span class="normal"> yc</span><span class="symbol">,</span><span class="normal"> x</span><span class="symbol">.</span><span class="function">length</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">/</span><span class="normal"> </span><span class="number">2.0</span><span class="symbol">,</span><span class="normal"> y</span><span class="symbol">.</span><span class="function">length</span><span class="symbol">()</span><span class="normal"> </span><span class="symbol">/</span><span class="normal"> </span><span class="number">2.0</span><span class="symbol">);</span>
 <span class="normal">    </span><span class="cbracket">}</span>
 
@@ -209,7 +209,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>

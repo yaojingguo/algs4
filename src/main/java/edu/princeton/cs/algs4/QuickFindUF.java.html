@@ -181,6 +181,8 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     *         both </span><span class="keyword">&lt;tt&gt;</span><span class="comment">0 </span><span class="preproc">&amp;le;</span><span class="comment"> p </span><span class="preproc">&amp;lt;</span><span class="comment"> N</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> and </span><span class="keyword">&lt;tt&gt;</span><span class="comment">0 </span><span class="preproc">&amp;le;</span><span class="comment"> q </span><span class="preproc">&amp;lt;</span><span class="comment"> N</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="type">void</span><span class="normal"> </span><span class="function">union</span><span class="symbol">(</span><span class="type">int</span><span class="normal"> p</span><span class="symbol">,</span><span class="normal"> </span><span class="type">int</span><span class="normal"> q</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">        </span><span class="function">validate</span><span class="symbol">(</span><span class="normal">p</span><span class="symbol">);</span>
+<span class="normal">        </span><span class="function">validate</span><span class="symbol">(</span><span class="normal">q</span><span class="symbol">);</span>
 <span class="normal">        </span><span class="type">int</span><span class="normal"> pID </span><span class="symbol">=</span><span class="normal"> id</span><span class="symbol">[</span><span class="normal">p</span><span class="symbol">];</span><span class="normal">   </span><span class="comment">// needed for correctness</span>
 <span class="normal">        </span><span class="type">int</span><span class="normal"> qID </span><span class="symbol">=</span><span class="normal"> id</span><span class="symbol">[</span><span class="normal">q</span><span class="symbol">];</span><span class="normal">   </span><span class="comment">// to reduce the number of array accesses</span>
 
@@ -251,7 +253,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>

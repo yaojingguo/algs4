@@ -151,9 +151,9 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> an index associated with a minimum key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if this priority queue is empty</span>
 <span class="comment">     */</span>
-<span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="type">int</span><span class="normal"> </span><span class="function">minIndex</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal"> </span>
+<span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="type">int</span><span class="normal"> </span><span class="function">minIndex</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">N </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span><span class="normal"> </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">NoSuchElementException</span><span class="symbol">(</span><span class="string">"Priority queue underflow"</span><span class="symbol">);</span>
-<span class="normal">        </span><span class="keyword">return</span><span class="normal"> pq</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">];</span><span class="normal">        </span>
+<span class="normal">        </span><span class="keyword">return</span><span class="normal"> pq</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">];</span>
 <span class="normal">    </span><span class="cbracket">}</span>
 
 <span class="normal">    </span><span class="comment">/**</span>
@@ -162,9 +162,9 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> a minimum key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if this priority queue is empty</span>
 <span class="comment">     */</span>
-<span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="usertype">Key</span><span class="normal"> </span><span class="function">minKey</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal"> </span>
+<span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="usertype">Key</span><span class="normal"> </span><span class="function">minKey</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">N </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span><span class="normal"> </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">NoSuchElementException</span><span class="symbol">(</span><span class="string">"Priority queue underflow"</span><span class="symbol">);</span>
-<span class="normal">        </span><span class="keyword">return</span><span class="normal"> keys</span><span class="symbol">[</span><span class="normal">pq</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">]];</span><span class="normal">        </span>
+<span class="normal">        </span><span class="keyword">return</span><span class="normal"> keys</span><span class="symbol">[</span><span class="normal">pq</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">]];</span>
 <span class="normal">    </span><span class="cbracket">}</span>
 
 <span class="normal">    </span><span class="comment">/**</span>
@@ -172,16 +172,16 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * </span><span class="type">@return</span><span class="comment"> an index associated with a minimum key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException if this priority queue is empty</span>
 <span class="comment">     */</span>
-<span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="type">int</span><span class="normal"> </span><span class="function">delMin</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal"> </span>
+<span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="type">int</span><span class="normal"> </span><span class="function">delMin</span><span class="symbol">()</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">N </span><span class="symbol">==</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span><span class="normal"> </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">NoSuchElementException</span><span class="symbol">(</span><span class="string">"Priority queue underflow"</span><span class="symbol">);</span>
-<span class="normal">        </span><span class="type">int</span><span class="normal"> min </span><span class="symbol">=</span><span class="normal"> pq</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">];</span><span class="normal">        </span>
-<span class="normal">        </span><span class="function">exch</span><span class="symbol">(</span><span class="number">1</span><span class="symbol">,</span><span class="normal"> N</span><span class="symbol">--);</span><span class="normal"> </span>
+<span class="normal">        </span><span class="type">int</span><span class="normal"> min </span><span class="symbol">=</span><span class="normal"> pq</span><span class="symbol">[</span><span class="number">1</span><span class="symbol">];</span>
+<span class="normal">        </span><span class="function">exch</span><span class="symbol">(</span><span class="number">1</span><span class="symbol">,</span><span class="normal"> N</span><span class="symbol">--);</span>
 <span class="normal">        </span><span class="function">sink</span><span class="symbol">(</span><span class="number">1</span><span class="symbol">);</span>
 <span class="normal">        </span><span class="keyword">assert</span><span class="normal"> min </span><span class="symbol">==</span><span class="normal"> pq</span><span class="symbol">[</span><span class="normal">N</span><span class="symbol">+</span><span class="number">1</span><span class="symbol">];</span>
 <span class="normal">        qp</span><span class="symbol">[</span><span class="normal">min</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// delete</span>
 <span class="normal">        keys</span><span class="symbol">[</span><span class="normal">min</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="keyword">null</span><span class="symbol">;</span><span class="normal">    </span><span class="comment">// to help with garbage collection</span>
 <span class="normal">        pq</span><span class="symbol">[</span><span class="normal">N</span><span class="symbol">+</span><span class="number">1</span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">;</span><span class="normal">        </span><span class="comment">// not needed</span>
-<span class="normal">        </span><span class="keyword">return</span><span class="normal"> min</span><span class="symbol">;</span><span class="normal"> </span>
+<span class="normal">        </span><span class="keyword">return</span><span class="normal"> min</span><span class="symbol">;</span>
 <span class="normal">    </span><span class="cbracket">}</span>
 
 <span class="normal">    </span><span class="comment">/**</span>
@@ -202,7 +202,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * Change the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to the specified value.</span>
 <span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@param</span><span class="comment">  i the index of the key to change</span>
-<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key change the key assocated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
+<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key change the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> IndexOutOfBoundsException unless 0 </span><span class="preproc">&amp;le;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> </span><span class="preproc">&amp;lt;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">maxN</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException no key is associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     */</span>
@@ -218,7 +218,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * Change the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to the specified value.</span>
 <span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@param</span><span class="comment">  i the index of the key to change</span>
-<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key change the key assocated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
+<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key change the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> IndexOutOfBoundsException unless 0 </span><span class="preproc">&amp;le;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> </span><span class="preproc">&amp;lt;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">maxN</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     * </span><span class="type">@deprecated</span><span class="comment"> Replaced by {</span><span class="type">@link</span><span class="comment"> #changeKey(int, Key)}.</span>
 <span class="comment">     */</span>
@@ -230,7 +230,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * Decrease the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to the specified value.</span>
 <span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@param</span><span class="comment">  i the index of the key to decrease</span>
-<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key decrease the key assocated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
+<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key decrease the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> IndexOutOfBoundsException unless 0 </span><span class="preproc">&amp;le;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> </span><span class="preproc">&amp;lt;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">maxN</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> IllegalArgumentException if key </span><span class="preproc">&amp;ge;</span><span class="comment"> key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException no key is associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span>
@@ -248,7 +248,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     * Increase the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to the specified value.</span>
 <span class="comment">     *</span>
 <span class="comment">     * </span><span class="type">@param</span><span class="comment">  i the index of the key to increase</span>
-<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key increase the key assocated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
+<span class="comment">     * </span><span class="type">@param</span><span class="comment">  key increase the key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> to this key</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> IndexOutOfBoundsException unless 0 </span><span class="preproc">&amp;le;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span><span class="comment"> </span><span class="preproc">&amp;lt;</span><span class="comment"> </span><span class="keyword">&lt;tt&gt;</span><span class="comment">maxN</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> IllegalArgumentException if key </span><span class="preproc">&amp;le;</span><span class="comment"> key associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span>
 <span class="comment">     * </span><span class="type">@throws</span><span class="comment"> NoSuchElementException no key is associated with index </span><span class="keyword">&lt;tt&gt;</span><span class="comment">i</span><span class="keyword">&lt;/tt&gt;</span>
@@ -300,7 +300,7 @@ http://www.gnu.org/software/src-highlite -->
 <span class="normal">   </span><span class="comment">/***************************************************************************</span>
 <span class="comment">    * Heap helper functions.</span>
 <span class="comment">    ***************************************************************************/</span>
-<span class="normal">    </span><span class="keyword">private</span><span class="normal"> </span><span class="type">void</span><span class="normal"> </span><span class="function">swim</span><span class="symbol">(</span><span class="type">int</span><span class="normal"> k</span><span class="symbol">)</span><span class="normal">  </span><span class="cbracket">{</span>
+<span class="normal">    </span><span class="keyword">private</span><span class="normal"> </span><span class="type">void</span><span class="normal"> </span><span class="function">swim</span><span class="symbol">(</span><span class="type">int</span><span class="normal"> k</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">        </span><span class="keyword">while</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">k </span><span class="symbol">&gt;</span><span class="normal"> </span><span class="number">1</span><span class="normal"> </span><span class="symbol">&amp;&amp;</span><span class="normal"> </span><span class="function">greater</span><span class="symbol">(</span><span class="normal">k</span><span class="symbol">/</span><span class="number">2</span><span class="symbol">,</span><span class="normal"> k</span><span class="symbol">))</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">            </span><span class="function">exch</span><span class="symbol">(</span><span class="normal">k</span><span class="symbol">,</span><span class="normal"> k</span><span class="symbol">/</span><span class="number">2</span><span class="symbol">);</span>
 <span class="normal">            k </span><span class="symbol">=</span><span class="normal"> k</span><span class="symbol">/</span><span class="number">2</span><span class="symbol">;</span>
@@ -426,7 +426,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>

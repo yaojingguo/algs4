@@ -661,7 +661,8 @@ http://www.gnu.org/software/src-highlite -->
 <span class="comment">     *         {</span><span class="type">@code</span><span class="comment"> height} are positive</span>
 <span class="comment">     */</span>
 <span class="normal">    </span><span class="keyword">public</span><span class="normal"> </span><span class="keyword">static</span><span class="normal"> </span><span class="type">void</span><span class="normal"> </span><span class="function">setCanvasSize</span><span class="symbol">(</span><span class="type">int</span><span class="normal"> canvasWidth</span><span class="symbol">,</span><span class="normal"> </span><span class="type">int</span><span class="normal"> canvasHeight</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">width </span><span class="symbol">&lt;=</span><span class="normal"> </span><span class="number">0</span><span class="normal"> </span><span class="symbol">||</span><span class="normal"> height </span><span class="symbol">&lt;=</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span><span class="normal"> </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">IllegalArgumentException</span><span class="symbol">(</span><span class="string">"width and height must be positive"</span><span class="symbol">);</span>
+<span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">canvasWidth </span><span class="symbol">&lt;=</span><span class="normal"> </span><span class="number">0</span><span class="normal"> </span><span class="symbol">||</span><span class="normal"> canvasHeight </span><span class="symbol">&lt;=</span><span class="normal"> </span><span class="number">0</span><span class="symbol">)</span>
+<span class="normal">            </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">IllegalArgumentException</span><span class="symbol">(</span><span class="string">"width and height must be positive"</span><span class="symbol">);</span>
 <span class="normal">        width </span><span class="symbol">=</span><span class="normal"> canvasWidth</span><span class="symbol">;</span>
 <span class="normal">        height </span><span class="symbol">=</span><span class="normal"> canvasHeight</span><span class="symbol">;</span>
 <span class="normal">        </span><span class="function">init</span><span class="symbol">();</span>
@@ -1857,7 +1858,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>

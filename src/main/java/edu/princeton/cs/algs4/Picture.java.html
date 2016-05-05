@@ -151,17 +151,17 @@ http://www.gnu.org/software/src-highlite -->
 <span class="normal">                </span><span class="cbracket">}</span>
 <span class="normal">                image </span><span class="symbol">=</span><span class="normal"> ImageIO</span><span class="symbol">.</span><span class="function">read</span><span class="symbol">(</span><span class="normal">url</span><span class="symbol">);</span>
 <span class="normal">            </span><span class="cbracket">}</span>
+
+<span class="normal">            </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">image </span><span class="symbol">==</span><span class="normal"> </span><span class="keyword">null</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
+<span class="normal">                </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">IllegalArgumentException</span><span class="symbol">(</span><span class="string">"Invalid image file: "</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> filename</span><span class="symbol">);</span>
+<span class="normal">            </span><span class="cbracket">}</span>
+
 <span class="normal">            width  </span><span class="symbol">=</span><span class="normal"> image</span><span class="symbol">.</span><span class="function">getWidth</span><span class="symbol">(</span><span class="keyword">null</span><span class="symbol">);</span>
 <span class="normal">            height </span><span class="symbol">=</span><span class="normal"> image</span><span class="symbol">.</span><span class="function">getHeight</span><span class="symbol">(</span><span class="keyword">null</span><span class="symbol">);</span>
 <span class="normal">        </span><span class="cbracket">}</span>
 <span class="normal">        </span><span class="keyword">catch</span><span class="normal"> </span><span class="symbol">(</span><span class="usertype">IOException</span><span class="normal"> e</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">            </span><span class="comment">// e.printStackTrace();</span>
 <span class="normal">            </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">RuntimeException</span><span class="symbol">(</span><span class="string">"Could not open file: "</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> filename</span><span class="symbol">);</span>
-<span class="normal">        </span><span class="cbracket">}</span>
-
-<span class="normal">        </span><span class="comment">// check that image was read in</span>
-<span class="normal">        </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">image </span><span class="symbol">==</span><span class="normal"> </span><span class="keyword">null</span><span class="symbol">)</span><span class="normal"> </span><span class="cbracket">{</span>
-<span class="normal">            </span><span class="keyword">throw</span><span class="normal"> </span><span class="keyword">new</span><span class="normal"> </span><span class="function">RuntimeException</span><span class="symbol">(</span><span class="string">"Invalid image file: "</span><span class="normal"> </span><span class="symbol">+</span><span class="normal"> filename</span><span class="symbol">);</span>
 <span class="normal">        </span><span class="cbracket">}</span>
 <span class="normal">    </span><span class="cbracket">}</span>
 
@@ -427,7 +427,7 @@ pageTracker._trackPageview();
 </body>
 
 <p><br><address><small>
-Last updated: Sat Jan 30 20:14:25 EST 2016.
+Last updated: Sat Mar 26 16:10:13 EDT 2016.
 </small></address>
 
 </html>
