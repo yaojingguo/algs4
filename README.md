@@ -1,3 +1,5 @@
+__Left for reference. Use https://github.com/yaojingguo/algs4-1 instead.__
+
 Code for Algorithms, 4th Edition by Robert Sedgewick and Kevin Wayne
 
 ## Memo
